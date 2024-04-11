@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Portfolio</title>
+  <style>
+    body{
+      font-family: georgia;
+    }
+    .navbar {
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    }
+    .navbar a {
+      display: block;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      font-family: poppins;
+    }
+    .navbar a:hover {
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/info" class="nav-link">Info</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/gallery" class="nav-link">Gallery</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/contact" class="nav-link">Contact</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <router-view></router-view>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/vue-router@3"></script>
+<script>
+  const Home = { 
+    template: `
+    <div class="container-fluid justify-content-center mt-5 p-5">
+      <div class="row g-3">
+        <div class="col-8 h4">
+          <p>I am Joviel Babatuan, a transgender individual from Cordova. I am proud to be a member of the LGBTQ+ community, embracing my identity with confidence and resilience. As a transgender person, I've faced challenges and discrimination, but I refuse to let them define me. I am enough, just as I am. My journey of self-discovery and acceptance has empowered me to live authentically and advocate for equality and inclusivity. By embracing my truth and standing tall in my identity, I strive to inspire others to do the same. Every step I take towards self-love and acceptance is a victory not only for myself but for the entire LGBTQ+ community. Together, we continue to break barriers, challenge stereotypes, and create a world where everyone can thrive, regardless of their gender identity or sexual orientation.</p>
+          <p>Moreover, through my experiences and activism, I aim to foster understanding and compassion within society. I believe in the power of education and dialogue to dismantle prejudices and promote acceptance. By sharing my story and engaging in open conversations, I seek to promote empathy and respect for diverse identities. It is my hope that by embracing diversity and celebrating individuality, we can build a more inclusive and equitable world for all. Together, we can create spaces where everyone feels valued, respected, and free to be their authentic selves.</p>
+        </div>
+        <div class="col-4">
+          <img src="images/pic3.jpg" class="card-img-top" style="width: 80%;">
+        </div>
+      </div>
+    </div>
+    ` 
+  };
+
+  const Info = { 
+    template: `
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="text-center">Personal Information</h2>
+            <p class="text-center">Morning Edition</p>
+              <ul class="list-group p-2">
+                <li class="list-group-item"><strong>Name:</strong> Joevil A. Babatuan</li>
+                <li class="list-group-item"><strong>Address:</strong> San Miguel, Cordova, Cebu</li>
+                <li class="list-group-item"><strong>Birthday:</strong> July 12, 2001</li>
+                <li class="list-group-item"><strong>Age:</strong> 22</li>
+                <li class="list-group-item"><strong>Gender:</strong> Male</li>
+                <li class="list-group-item"><strong>Occupation:</strong> Student</li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Personal Information</h2>
+            <p class="text-center">Evening Edition</p>
+              <ul class="list-group p-2">
+                <li class="list-group-item"><strong>Name:</strong> Bell Babatuan</li>
+                <li class="list-group-item"><strong>Address:</strong> San Miguel, Cordova, Cebu</li>
+                <li class="list-group-item"><strong>Birthday:</strong> July 12, 2001</li>
+                <li class="list-group-item"><strong>Age:</strong> 22</li>
+                <li class="list-group-item"><strong>Gender:</strong> Transgender</li>
+                <li class="list-group-item"><strong>Occupation:</strong> Stripper</li>
+              </ul>
+          </div>
+        </div>
+      </div>` 
+  };
+
+  const Gallery = { 
+    template: `
+      <div class="container p-2">
+        <h3 class="text-center">Mirror Shot</h3>
+        <div class="row g-3">
+          <div class="col-3">
+            <img src="images/pic4.jpg" class="card-img-top" style="width: 100%; height: 75%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic6.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic7.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic8.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+        </div>
+        <h3 class="text-center">Bikini Shot</h3>
+        <div class="row g-3">
+          <div class="col-3">
+            <img src="images/pic1.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic2.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic5.jpg" class="card-img-top" style="width: 100%; align-items: center;">
+          </div>
+          <div class="col-3">
+            <img src="images/pic9.jpg" class="card-img-top" style="width: 100%; height: 75%; align-items: center;">
+          </div>
+        </div>
+      </div>
+        ` 
+  };
+
+  const Contact = { 
+    template: `
+      <div class="container mt-5">
+        <h4 class="text-center p-5">Contact Me!</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Email</h5>
+                  <p class="card-text">Gmail: bellbabatuan@gmail.com</p>
+                  <p class="card-text">Yahoo: bellbabatuan69@yahoo.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Phone Numbers</h5>
+                  <p class="card-text">Mobile: 09247821364612</p>
+                  <p class="card-text">Home: +87000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Social Media</h5>
+                  <p class="card-text">Twitter: bellbabatuan 69</p>
+                  <p class="card-text">Facebook: Belle Babatuan</p>
+                  <p class="card-text">Instagram: belle_babtuan</p>
+                  <p class="card-text">OnlyFans: 69bellebabtuan69</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      ` 
+  };
+
+  const router = new VueRouter({
+    routes: [
+      { path: '/', component: Home },
+      { path: '/info', component: Info },
+      { path: '/gallery', component: Gallery },
+      { path: '/contact', component: Contact }
+    ]
+  });
+
+  new Vue({
+    el: '#app',
+    router
+  });
+</script>
+</body>
+</html>
